@@ -1,0 +1,9 @@
+{
+  "name": "ReiningSaddles.com",
+  "short_name": "Reining Saddles",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF6EC",
+  "theme_color": "#3D1F0A",
+  "description": "Professional guide to reining saddles, saddle fit, new saddles, and certified used saddle inventory."
+}
