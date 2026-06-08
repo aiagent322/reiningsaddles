@@ -50,6 +50,18 @@
       a.setAttribute('rel', rel.join(' ').trim());
     });
 
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(q){
+      q.addEventListener('click',function(){
+        var item=this.closest('.faq-item');
+        if(!item)return;
+        var isOpen=item.classList.contains('open');
+        var cat=item.closest('.faq-category');
+        if(cat){cat.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open');});}
+        if(!isOpen)item.classList.add('open');
+      });
+    });
+
     document.querySelectorAll('input, textarea, select').forEach(function(el){
       el.addEventListener('focus', function(){ document.body.classList.add('form-focused'); });
       el.addEventListener('blur', function(){ setTimeout(function(){ if(!document.querySelector('input:focus, textarea:focus, select:focus')) document.body.classList.remove('form-focused'); }, 40); });
