@@ -64,11 +64,11 @@
   var step=0;
 
   function scoreSaddle(s){
+    // Hard exclude: wrong discipline scores 0 and won't appear in results
+    if(answers.disc!=="any"&&s.disc!==answers.disc)return 0;
     var pts=0;
-    // Discipline (35pts) — primary filter
-    if(answers.disc==="any"){pts+=25;}
-    else if(s.disc===answers.disc){pts+=35;}
-    else{pts+=0;}
+    // Discipline (35pts)
+    if(answers.disc==="any"){pts+=20;}else{pts+=35;}
     // Seat (30pts)
     var sa=answers.seat;
     if(sa===0){pts+=18;}else if(s.seat===0){pts+=14;}else{var d=Math.abs(s.seat-sa);if(d===0)pts+=30;else if(d<=0.5)pts+=15;}
@@ -146,7 +146,7 @@
   function renderResults(app){
     var scored=SADDLES.map(function(s){return{s:s,pts:scoreSaddle(s)};});
     scored.sort(function(a,b){return b.pts-a.pts;});
-    var top=scored.slice(0,6).filter(function(r){return r.pts>=20;});
+    var top=scored.slice(0,6).filter(function(r){return r.pts>=15;});
 
     var html='<div class="mm-results">';
     html+='<h2 class="mm-results-title">Your Best Matches</h2>';
