@@ -577,7 +577,8 @@ a, button, .btn, input, select, textarea { -webkit-tap-highlight-color: rgba(184
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
-.saddle-img-wrap img {
+.saddle-img-wrap img,
+.saddle-card > img {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 4;
