@@ -832,7 +832,8 @@ body.has-mobile-action-bar { padding-bottom: 66px; }
 .product-action-grid .fit{background:#fff;color:var(--cognac);}
 .trust-strip{background:var(--parchment);border-top:1px solid rgba(139,69,19,.16);border-bottom:1px solid rgba(139,69,19,.16);padding:20px 0;}
 .trust-grid{display:grid;grid-template-columns:1fr;gap:12px;}
-.trust-card{background:#fff;border:1px solid rgba(139,69,19,.14);padding:16px;}
+.trust-card{background:#fff;border:1px solid rgba(139,69,19,.14);padding:16px;display:block;text-decoration:none;color:inherit;transition:border-color .2s,box-shadow .2s;}
+.trust-card:hover{border-color:var(--cognac);box-shadow:0 4px 16px rgba(139,69,19,.12);}
 .trust-card strong{display:block;color:var(--dark-brown);font-family:var(--font-label);font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
 .trust-card span{display:block;color:var(--warm-gray);font-size:.92rem;line-height:1.5;}
 .inventory-trust-note{font-size:.86rem;line-height:1.45;color:var(--warm-gray);margin:10px 0 12px;background:rgba(184,134,11,.08);padding:10px;border-left:3px solid var(--gold);}
