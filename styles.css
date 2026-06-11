@@ -1050,3 +1050,4 @@ body.has-mobile-action-bar{padding-bottom:calc(var(--mobile-bar-height) + env(sa
   .international-professional-panel,.commercial-disclaimer-panel,.product-disclaimer-panel{padding:22px 0;}
 }
 
+.header-bb { display:flex; align-items:center; margin-left:auto; flex-shrink:0; }
