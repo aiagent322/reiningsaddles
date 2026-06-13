@@ -387,7 +387,7 @@ a:hover { color: var(--gold); }
 @media (min-width: 640px) { .faq-q { font-size: 1.15rem; } }
 .faq-q::after { content: '+'; font-size: 1.4rem; color: var(--cognac); flex-shrink: 0; }
 .faq-item.open .faq-q::after { content: '−'; }
-.faq-a { display: none; padding-top: 12px; font-size: .95rem; color: var(--warm-gray); line-height: 1.75; }
+.faq-a { display: none; padding-top: 12px; font-size: .95rem; color: #000; line-height: 1.75; }
 .faq-item.open .faq-a { display: block; }
 
 /* ── TIMELINE ── */
