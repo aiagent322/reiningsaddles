@@ -141,7 +141,7 @@ a:hover { color: var(--gold); }
   font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--tan);
+  color: #fff;
   padding: 13px 20px;
   border-left: 3px solid transparent;
   display: block;
