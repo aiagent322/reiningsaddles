@@ -662,7 +662,7 @@ a, button, .btn, input, select, textarea { -webkit-tap-highlight-color: rgba(184
 .want-box h3 { font-family: var(--font-display); color: var(--dark-saddle); margin-bottom: 8px; }
 
 /* Product pages */
-.breadcrumb { font-family: var(--font-label); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px; color: var(--warm-gray); }
+.breadcrumb { font-family: var(--font-label); font-size: 0.85rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 18px; color: var(--warm-gray); }
 .breadcrumb a { color: var(--cognac); }
 .listing-grid { display: grid; grid-template-columns: 1fr; gap: 24px; align-items: start; }
 .main-img-wrap { background: var(--parchment); border: 1px solid rgba(139,69,19,.14); overflow: hidden; }
