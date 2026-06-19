@@ -67,14 +67,13 @@
       el.addEventListener('blur', function(){ setTimeout(function(){ if(!document.querySelector('input:focus, textarea:focus, select:focus')) document.body.classList.remove('form-focused'); }, 40); });
     });
 
-    // Phone-first conversion bar: Call, WhatsApp, Email. Visible only on phones via CSS.
+    // Phone-first conversion bar: Call, Email. Visible only on phones via CSS.
     if(!document.querySelector('.mobile-action-bar') && !document.body.classList.contains('no-mobile-action-bar')){
       var bar=document.createElement('div');
       bar.className='mobile-action-bar';
       bar.setAttribute('aria-label','Quick contact actions');
       var source=encodeURIComponent((document.title || 'ReiningSaddles.com') + ' | ' + location.pathname);
-      var waText=encodeURIComponent('I am looking at ' + (document.title || 'ReiningSaddles.com') + ' on ReiningSaddles.com and would like saddle help.');
-      bar.innerHTML='<a href="tel:4177931403">Call</a><a href="https://wa.me/14177931403?text='+waText+'" target="_blank" rel="noopener noreferrer">WhatsApp</a><a href="/contact.html?interest=General%20saddle%20question&source='+source+'">Email</a>';
+      bar.innerHTML='<a href="tel:4177931403">Call</a><a href="/contact.html?interest=General%20saddle%20question&source='+source+'">Email</a>';
       document.body.appendChild(bar);
       document.body.classList.add('has-mobile-action-bar');
     }

@@ -443,7 +443,7 @@ main, section, article, aside, footer, header, nav { max-width: 100%; }
 /* Touch targets and phone readability */
 a, button, .btn, input, select, textarea { -webkit-tap-highlight-color: rgba(184,134,11,.25); }
 .btn, .inquire-btn, .saddle-btn, .endorser-card-btn, .form-btn, .cta-button,
-.btn-phone, .btn-mail, .btn-wa, .nav-links a, .sponsor-name {
+.btn-phone, .btn-mail, .nav-links a, .sponsor-name {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -828,7 +828,6 @@ body.has-mobile-action-bar { padding-bottom: 66px; }
 .buyer-actions a,.buyer-actions button{min-height:46px;display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;border-radius:0;font-family:var(--font-label);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;padding:12px 14px;border:1px solid rgba(255,255,255,.22);}
 .buyer-actions .call{background:var(--gold);color:#251307;border-color:var(--gold);}
 .buyer-actions .email{background:#fff;color:var(--cognac);}
-.buyer-actions .whatsapp{background:#1f7a3f;color:#fff;border-color:#1f7a3f;}
 .buyer-actions .fit{background:transparent;color:#fff;}
 .phone-buyer-note{font-size:.9rem;color:rgba(245,237,216,.78);line-height:1.5;margin:6px 0 0;}
 .status-badge,.availability-badge{display:inline-flex;align-items:center;gap:6px;width:max-content;max-width:100%;padding:7px 10px;background:#163f25;color:#fff;font-family:var(--font-label);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;border-radius:999px;margin:0 0 10px;}
@@ -841,7 +840,6 @@ body.has-mobile-action-bar { padding-bottom: 66px; }
 .product-action-grid a{min-height:48px;display:flex;align-items:center;justify-content:center;text-decoration:none;text-align:center;font-family:var(--font-label);font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;padding:12px 14px;border:1px solid rgba(139,69,19,.25);}
 .product-action-grid .call{background:var(--cognac);color:#fff;border-color:var(--cognac);}
 .product-action-grid .email{background:var(--gold);color:#251307;border-color:var(--gold);}
-.product-action-grid .whatsapp{background:#1f7a3f;color:#fff;border-color:#1f7a3f;}
 .product-action-grid .fit{background:#fff;color:var(--cognac);}
 .trust-strip{background:var(--parchment);border-top:1px solid rgba(139,69,19,.16);border-bottom:1px solid rgba(139,69,19,.16);padding:20px 0;}
 .trust-grid{display:grid;grid-template-columns:1fr;gap:12px;}

@@ -173,7 +173,6 @@
     }
     html+='<div class="mm-cta-strip"><p>Not sure? David Solum will match you personally \u2014 free of charge.</p>';
     html+='<a class="mm-cta-call" href="tel:4177931403">Call David</a>';
-    html+='<a class="mm-cta-wa" href="https://wa.me/14177931403?text=I+just+used+the+Saddle+Matchmaker+on+ReiningSaddles.com." target="_blank" rel="noopener noreferrer">WhatsApp</a>';
     html+='<a class="mm-cta-email" href="/contact.html?interest=Saddle+Matchmaker+results&source=Matchmaker">Email David</a></div>';
     html+='<button class="mm-restart">\u2190 Start Over</button></div>';
     app.innerHTML=html;
@@ -222,7 +221,6 @@
       '.mm-cta-strip p{font-size:.9rem;color:#5a4a3a;margin-bottom:14px;line-height:1.5}'+
       '.mm-cta-strip a{display:inline-block;margin:4px;padding:10px 18px;border-radius:6px;font-size:.85rem;font-weight:600;text-decoration:none}'+
       '.mm-cta-call{background:var(--cognac,#8B2500);color:#fff}'+
-      '.mm-cta-wa{background:#25D366;color:#fff}'+
       '.mm-cta-email{background:#2A1206;color:#F5EDD8}'+
       '.mm-restart{background:none;border:1px solid #ccc;border-radius:6px;padding:10px 16px;font-size:.85rem;color:#7a6a58;cursor:pointer;font-family:inherit;min-height:44px}'+
       '.mm-restart:hover{border-color:var(--cognac,#8B2500);color:var(--cognac,#8B2500)}';
