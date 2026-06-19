@@ -38,7 +38,7 @@
     {slug:"teddy-johnson-cutter-16-full",title:"Teddy Johnson Cutter 16\u2033 \u2014 NCHA Competition History",price:1195,seat:16,maker:"Other",silver:false,disc:"cow"},
     {slug:"teddy-johnson-cutter-16",title:"Teddy Johnson Cutter 16\u2033 \u2014 Certified Used",price:1195,seat:16,maker:"Other",silver:false,disc:"cow"},
     {slug:"trevor-dare-martin-saddlery-15-5",title:"Trevor Dare Reiner by Martin Saddlery 15.5\u2033 Full Silver",price:4995,seat:15.5,maker:"Martin",silver:true,disc:"reining"},
-    {slug:"new-saddles",title:"New Superior Saddlery \u2014 Custom Order by Andy Mashke",price:8500,seat:16,maker:"Superior",silver:false,disc:"reining",isNew:true},
+    {slug:"new-saddles",title:"New Superior Saddlery \u2014 Custom Order by Andreas Maschke",price:8500,seat:16,maker:"Superior",silver:false,disc:"reining",isNew:true},
     {slug:"new-saddles",title:"New Superior Saddlery \u2014 Full Silver Custom Build",price:12000,seat:16,maker:"Superior",silver:true,disc:"reining",isNew:true}
   ];
 
