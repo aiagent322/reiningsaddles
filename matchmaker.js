@@ -9,7 +9,6 @@
     {slug:"bob-avila-bobs-custom-16",title:"Bob Avila by Bob\u2019s Custom 16\u2033 B17-120M",price:5995,seat:16,maker:"Bobs Custom",silver:false,disc:"reining"},
     {slug:"bob-avila-bobs-custom-17",title:"Bob Avila by Bob\u2019s Custom 17\u2033 S-Scroll Sterling Silver",price:2995,seat:17,maker:"Bobs Custom",silver:true,disc:"reining"},
     {slug:"bobs-custom-16-b16-1455m",title:"Bob\u2019s Custom 16\u2033 B16-1455M",price:2495,seat:16,maker:"Bobs Custom",silver:false,disc:"reining"},
-    {slug:"bobs-custom-16-basketweave-silver",title:"Bob\u2019s Custom 16\u2033 \u2014 Basketweave & Floral, Sterling",price:5995,seat:16,maker:"Bobs Custom",silver:true,disc:"reining"},
     {slug:"bobs-custom-16-tan-sterling-silver",title:"Bob\u2019s Custom 16\u2033 \u2014 Tan Leather, Sterling Silver",price:5995,seat:16,maker:"Bobs Custom",silver:true,disc:"reining"},
     {slug:"bobs-custom-kr-lady-reiner-15-5",title:"Bob\u2019s Custom KR Lady Reiner 15.5\u2033 Bison Seat",price:4995,seat:15.5,maker:"Bobs Custom",silver:false,disc:"reining"},
     {slug:"bobs-custom-saddle-15-b14-867m",title:"Bob\u2019s Custom 15\u2033 B14-867M \u2014 Certified Used",price:1795,seat:15,maker:"Bobs Custom",silver:false,disc:"reining"},
