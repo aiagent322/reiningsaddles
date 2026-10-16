@@ -3,7 +3,6 @@
   var SADDLES=[
     {slug:"af-reiner-pinnacle-saddlery-16",title:"AF Reiner by Pinnacle Saddlery \u2014 Maschke 16\u2033 Elephant",price:5995,seat:16,maker:"Superior",silver:false,disc:"reining"},
     {slug:"andrea-maschke-reiner-15-5",title:"Andrea Maschke Reiner 15.5\u2033 Original 2004 Build",price:2495,seat:15.5,maker:"Superior",silver:false,disc:"reining"},
-    {slug:"bob-avila-bobs-custom-16-b",title:"Bob Avila by Bob\u2019s Custom 16\u2033 B17-120M \u2014 Full",price:5995,seat:16,maker:"Bobs Custom",silver:false,disc:"reining"},
     {slug:"bob-avila-bobs-custom-16-c",title:"Bob Avila by Bob\u2019s Custom 16\u2033 \u2014 Silver Swell Cap",price:5995,seat:16,maker:"Bobs Custom",silver:true,disc:"reining"},
     {slug:"bob-avila-bobs-custom-16-d",title:"Bob Avila by Bob\u2019s Custom 16\u2033 B99-472 Full Silver",price:1995,seat:16,maker:"Bobs Custom",silver:true,disc:"reining"},
     {slug:"bob-avila-bobs-custom-16",title:"Bob Avila by Bob\u2019s Custom 16\u2033 B17-120M",price:5995,seat:16,maker:"Bobs Custom",silver:false,disc:"reining"},
