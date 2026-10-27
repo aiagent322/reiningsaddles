@@ -59,6 +59,30 @@
   var answers={};
   var step=0;
 
+  // Live availability: Certified grid is the source of truth for sold/active and price.
+  var LIVE_URL='https://certifiedusedsaddles.com/used-saddles.html';
+  var SHIP_NOTE='<span style="font-size:.7em;font-weight:400;letter-spacing:.04em;opacity:.8;white-space:nowrap"> + Shipping</span>';
+  var ACTIVE=null, SOLD_LIST=[], liveReady=false, liveFailed=false;
+  function loadLive(){
+    fetch(LIVE_URL,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('grid');return r.text();}).then(function(t){
+      var doc=new DOMParser().parseFromString(t,'text/html'), live={};
+      doc.querySelectorAll('.listing-card').forEach(function(c){
+        var a=c.querySelector('a[href^="/used-saddles/"]'); if(!a)return;
+        var m=a.getAttribute('href').match(/\/used-saddles\/([^\/]+?)\.html/); if(!m||live[m[1]])return;
+        live[m[1]]={sold:!!c.querySelector('.sold-badge'),price:parseInt(c.getAttribute('data-price'),10)||0};
+      });
+      if(!Object.keys(live).length)throw new Error('empty');
+      ACTIVE=[];SOLD_LIST=[];
+      SADDLES.forEach(function(s){
+        if(s.isNew){ACTIVE.push(s);return;}
+        var l=live[s.slug]; if(!l)return;
+        var item=Object.assign({},s,{price:l.price});
+        if(l.sold)SOLD_LIST.push(item);else ACTIVE.push(item);
+      });
+      liveReady=true; if(step>=QUESTIONS.length)render();
+    }).catch(function(){liveFailed=true;ACTIVE=SADDLES.filter(function(s){return s.isNew;});liveReady=true;if(step>=QUESTIONS.length)render();});
+  }
+
   function scoreSaddle(s){
     // Hard exclude: wrong discipline scores 0 and won't appear in results
     if(answers.disc!=="any"&&s.disc!==answers.disc)return 0;
@@ -76,6 +100,18 @@
     // Silver (5pts)
     if(answers.silver==="any")pts+=5;else if(answers.silver==="yes"&&s.silver)pts+=5;else if(answers.silver==="no"&&!s.silver)pts+=5;
     return pts;
+  }
+
+  function soldMatches(){
+    var out=[],seen={};
+    SOLD_LIST.forEach(function(s){
+      if(answers.disc!=='any'&&s.disc!==answers.disc)return;
+      var pts=scoreSaddle(s); if(pts<60)return;
+      var key=s.title+'|'+s.seat+'|'+s.price; if(seen[key])return; seen[key]=1;
+      out.push({s:s,pts:pts});
+    });
+    out.sort(function(a,b){return b.pts-a.pts;});
+    return out.slice(0,3).map(function(o){return o.s;});
   }
 
   function whyMatch(s){
@@ -140,7 +176,8 @@
   }
 
   function renderResults(app){
-    var scored=SADDLES.map(function(s){return{s:s,pts:scoreSaddle(s)};});
+    if(!liveReady){app.innerHTML='<div class="mm-results"><p class="mm-results-sub">Checking current availability\u2026</p></div>';return;}
+    var scored=ACTIVE.map(function(s){return{s:s,pts:scoreSaddle(s)};});
     scored.sort(function(a,b){return b.pts-a.pts;});
     var top=scored.slice(0,6).filter(function(r){return r.pts>=15;});
 
@@ -160,12 +197,26 @@
         if(i===0)html+='<span class="mm-badge">Best Match</span>';
         html+='<div class="mm-card-score"><div class="mm-score-fill" style="width:'+pct+'%"></div></div>';
         html+='<h3 class="mm-card-title">'+s.title+'</h3>';
-        html+='<p class="mm-card-price">$'+s.price.toLocaleString()+(s.isNew?' \u2014 Custom Order':' \u2014 Certified Used')+'</p>';
+        html+='<p class="mm-card-price">$'+s.price.toLocaleString()+(s.price>0?SHIP_NOTE:'')+(s.isNew?' \u2014 Custom Order':' \u2014 Certified Used')+'</p>';
         html+='<ul class="mm-card-reasons">'+reasons.map(function(x){return'<li>'+x+'</li>';}).join('')+'</ul>';
         html+='<a class="mm-card-btn" href="'+link+'">View Saddle \u2192</a>';
         html+='</div>';
       });
       html+='</div>';
+    }
+    if(liveFailed)html+='<p class="mm-results-sub">Live availability could not be checked. <a href="/used-saddles.html">Browse current inventory \u2192</a></p>';
+    var sold=soldMatches();
+    if(sold.length){
+      html+='<div class="mm-sold-block" style="margin:28px 0 24px"><p class="mm-step-label">Recently sold</p><h3 class="mm-results-title" style="font-size:1.15rem">Similar saddles that have sold</h3>';
+      html+='<p class="mm-results-sub">These are no longer available. The price shown is what each was listed at.</p><div class="mm-cards">';
+      sold.forEach(function(s){
+        html+='<div class="mm-card" style="opacity:.92"><span class="mm-badge" style="background:#b71c1c;color:#fff">Sold</span>';
+        html+='<h3 class="mm-card-title">'+s.title+'</h3>';
+        html+='<p class="mm-card-price">'+(s.price>0?'Listed at $'+s.price.toLocaleString():'')+'</p>';
+        html+='<a class="mm-card-btn" href="/used-saddles/'+s.slug+'.html">View listing</a> ';
+        html+='<a class="mm-card-btn" style="background:#2A1206" href="/contact.html?interest=Want+one+like+'+encodeURIComponent(s.slug)+'&source=Matchmaker">Want one like this? Tell David \u2192</a></div>';
+      });
+      html+='</div></div>';
     }
     html+='<div class="mm-cta-strip"><p>Not sure? David Solum will match you personally \u2014 free of charge.</p>';
     html+='<a class="mm-cta-call" href="tel:4177931403">Call David</a>';
@@ -226,6 +277,7 @@
   function init(){
     if(!document.getElementById('mmApp'))return;
     addStyles();
+    loadLive();
     render();
   }
 
